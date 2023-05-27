@@ -1,0 +1,38 @@
+{
+    "swetha": {
+    "name":"Swetha Kare",
+    "password": "aaa"
+    },
+    "kannan": {
+    "name":"Kannan Jay",
+    "password": "bbb"
+    },
+    "shreyas": {
+    "name":"Shreyas Vittal",
+    "password": "111"
+    },
+    "siva": {
+    "name":"Shareef Shaik",
+    "password": "ccc" 
+    },
+    "shareef": {
+    "name":"Shareef Shaik",
+    "password": "ddd"
+    },
+    "hemanth":{
+    "name":"Hemanth Sani",
+    "password": "eee"  
+    },
+    "meghana":{
+    "name":"Meghana Kancherla",
+    "password": "fff"  
+    },
+    "sarayu":{
+    "name":"Sarayu Somu",
+    "password": "ggg"  
+    },
+    "ashish":{
+    "name":"Ashish Chanchalani",
+    "password": "hhh"  
+    }  
+}

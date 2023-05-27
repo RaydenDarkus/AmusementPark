@@ -1,0 +1,17 @@
+footer {
+    border-top: 1px solid grey;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.5px;
+    width: 100%;
+    position: absolute;
+    z-index: 8;
+} 
+
+#fcontent {
+    background-color: none;
+}
+
+#email {
+    text-decoration: none;
+}
