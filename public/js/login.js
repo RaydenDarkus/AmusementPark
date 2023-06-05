@@ -1,6 +1,6 @@
 function validate() {
         var usernName = document.getElementById("UserN").value;
-        alert("Hi" + usernName);
+        alert("Hi " + usernName);
 }
 
 // var DB = {};
