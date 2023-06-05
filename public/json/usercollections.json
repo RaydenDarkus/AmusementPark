@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "647d203ce677793bcdeb88e2"
+  },
+  "UserN": "svp",
+  "UserE": "wan@gmu.edu",
+  "NPassword": "alara12345",
+  "CPassword": "alara12345",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647d3072960d7e9f82fe0e2e"
+  },
+  "UserN": "shreyas",
+  "UserE": "svpatil20000@gmail.com",
+  "NPassword": "raizo12345",
+  "CPassword": "raizo12345",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647d3573960d7e9f82fe0e31"
+  },
+  "UserN": "user",
+  "UserE": "shreyas.patil20000@gmail.com",
+  "NPassword": "raida12345",
+  "CPassword": "raida12345",
+  "__v": 0
+}]
