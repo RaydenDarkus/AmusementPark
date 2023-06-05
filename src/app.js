@@ -45,7 +45,7 @@ app.get('/Ticket_Confirmation', (req,res) => {
 })
 
 app.get('/signup', (req,res) => {
-    res.render('signup');
+    res.render('signup', { messages: req.flash('error') });
 })
 
 app.post('/signup', (req,res) => {
@@ -57,6 +57,14 @@ app.post('/userdetails', async (req, res) => {
     const CPassword = req.body.CPassword;
     const UserN = req.body.UserN;
     const UserE = req.body.UserE;
+        // Password validation checks
+    if (CPassword.length < 10) {
+        req.flash('error', 'Password must be at least 10 characters long.');
+        return res.redirect('/signup');
+    } else if (!/[a-zA-Z]/.test(CPassword) || !/[0-9]/.test(CPassword) && !/[a-zA-Z]/.test(NPassword) || !/[0-9]/.test(NPassword)) {
+        req.flash('error', 'Password must contain at least one letter and one number.');
+        return res.redirect('/signup');
+    }
     try {
         if (CPassword === NPassword) {
             const userData = new userCollection({
@@ -75,7 +83,7 @@ app.post('/userdetails', async (req, res) => {
             res.redirect('/signup');
         }
     } catch (error) {
-        req.flash('error', 'Server error: ' + error.message);
+        req.flash('error', 'Server error: ' + 'duplicate error');
         res.redirect('/signup');
     }
 })
@@ -87,19 +95,30 @@ app.post('/loginPage', async (req, res) => {
     // console.log(getUserN.CPassword);
     // res.send(getUserN.CPassword);
     try {
-        if(getUserN.CPassword === CPassword) {
-            res.redirect('/ticketview');
+        if(getUserN) {
+            if(getUserN.CPassword === CPassword) {
+                req.flash('user', 'Welcome ' + UserN);
+                res.redirect('/ticketview');
+            }
+            else {
+                req.flash('error', 'Wrong password! Please try again.');
+                res.redirect('/login');
+            }
         }
         else {
-            res.redirect('./login');
+            req.flash('error', 'User not found. Please check your username and try again.');
+            res.redirect('/login');
         }
     } catch (error) {
+        req.flash('error', 'Server error: ' + 'error');
         res.redirect('/login');
     }
 })
 
 app.get('/login', (req,res) => {
-    res.render('login');
+    const successMessage = req.flash('success');
+    const errorMessage = req.flash('error');
+    res.render('login', { successMessage, errorMessage });
 })
 
 app.post('/login', (req,res) => {
@@ -107,7 +126,8 @@ app.post('/login', (req,res) => {
 })
 
 app.get('/ticketview', (req,res) => {
-    res.render('ticketview');
+    const userMessage = req.flash('user');
+    res.render('ticketview', { userMessage });
 })
 
 app.get('/ticketbooking', (req,res) => {

@@ -40,6 +40,13 @@
       <h1 class="card-header text-center">New User Registeration</h1>
       <div class="card-body">
         <form action="/userdetails" method="POST">
+          <% if (messages.length > 0) { %>
+            <div class="alert alert-danger">
+                <% messages.forEach(function(message) { %>
+                    <strong><%= message %></strong><br>
+                <% }); %>
+            </div>
+          <% } %>
           <div class="mb-3">
             <label for="UserName" class="form-label">User Name</label>
             <input type="text" class="form-control" id="UserN" name="UserN" placeholder="User Name" required>
@@ -50,11 +57,11 @@
           </div>
           <div class="mb-3">
             <label for="Password" class="form-label">New Password</label>
-            <input type="text" class="form-control" id="NPassword" name="NPassword" placeholder="Password" required>
+            <input type="password" class="form-control" id="NPassword" name="NPassword" placeholder="Password" autocomplete="off" required>
           </div>
           <div class="mb-3">
             <label for="Password" class="form-label">Confirm Password</label>
-            <input type="text" class="form-control" id="CPassword" name="CPassword" placeholder="Password" required>
+            <input type="password" class="form-control" id="CPassword" name="CPassword" placeholder="Password" autocomplete="off" required>
           </div>
           <div class="mb-3">
             <a href="/login" style="font-size:small; color: lightblue;"> Already have an account? Login</a>

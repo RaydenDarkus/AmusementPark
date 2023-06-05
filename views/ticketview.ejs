@@ -34,7 +34,7 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                            <a class="nav-link active" aria-current="page" onclick="logout()" href="/">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="/merchandise">Merchandise</a>
@@ -44,21 +44,25 @@
                     <form class="d-flex">
                         <input class="form-control me-3" type="search" placeholder="Search" aria-label="Search">
                     </form>
-                    <button id="button" class="btn btn-primary" type="submit">Search</button>
-                    
+                    <button id="button" class="btn btn-primary" type="submit">Search</button>   
                 </div>
             </div>
-            
         </nav>
     </div>
+    <br><br><br><br>
 
+    <% if (userMessage.length > 0) { %>
+        <div class=" user alert alert-dark">
+            <% userMessage.forEach(function(message) { %>
+                <strong><%= message %></strong><br>
+            <% }); %>
+        </div>
+    <% } %>
 
     <p style="text-align: center;">Special tickets and prices may be available for California Residents. <a
             href="javascript:goToLogin()" style="text-decoration:none;">Sign in</a><br>
         <hr>
-        <br><br>
     <p style="text-align:center; font-weight: 700;font-size: xxx-large; color:grey"> Theme Park Tickets </p>
-    <br>
     <p style="color:black; text-align:center">
         We have multiple unique theme parks at Walt Disney World Resort near Orlando, California—there’s plenty of fun
         for a
@@ -69,7 +73,7 @@
         To view or make changes to tickets you've already purchased, visit <a href="javascript:goToLogin()"
             style="text-decoration:none;">My
             Plans.</a></p>
-    </p><br><br>
+    </p>
     <div class="cama">
         <div class="container">
             <div class="item"><img src="./img/wt1.jpeg" class="rounded" height="500" width="75%"></div>
@@ -254,12 +258,12 @@
                     <!-- Left -->
                     <!-- Right -->
                     <div>
-                        <a href="" class="text-white me-4"><i class="fa fa-facebook-f"></i></a>
-                        <a href="" class="text-white me-4"><i class="fa fa-twitter"></i></a>
-                        <a href="" class="text-white me-4"><i class="fa fa-google"></i></a>
-                        <a href="" class="text-white me-4"><i class="fa fa-instagram"></i></a>
-                        <a href="" class="text-white me-4"><i class="fa fa-linkedin"></i></a>
-                        <a href="" class="text-white me-4"><i class="fa fa-github"></i></a>
+                        <a href="#" class="text-white me-4"><i class="fa fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-4"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="text-white me-4"><i class="fa fa-google"></i></a>
+                        <a href="#" class="text-white me-4"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="text-white me-4"><i class="fa fa-linkedin"></i></a>
+                        <a href="#" class="text-white me-4"><i class="fa fa-github"></i></a>
                     </div>
                     <!-- Right -->
                 </section>
@@ -272,12 +276,10 @@
                             <!-- Grid column -->
                             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                                 <!-- Content -->
-                                <h6 class="text-uppercase fw-bold">Company name</h6>
+                                <h6 class="text-uppercase fw-bold">AidenWorld</h6>
                                 <hr class="mb-4 mt-0 d-inline-block mx-auto"
                                     style="width: 60px; background-color: #7c4dff; height: 2px" />
-                                <p> Here you can use rows and columns to organize your footer content. Lorem ipsum dolor
-                                    sit amet,
-                                    consectetur adipisicing elit.</p>
+                                <p>  Enjoy your trip to AidenWorld.</p>
                             </div>
                             <!-- Grid column -->
 
@@ -290,7 +292,7 @@
                                 <p><a href="/merchandise" class="text-white">Clothes</a></p>
                                 <p><a href="/merchandise" class="text-white">Toys</a></p>
                                 <p><a href="/merchandise" class="text-white">Accessories</a></p>
-                                <p><a href="#!" class="text-white">Bootstrap Angular</a></p>
+                                <p><a href="/merchandise" class="text-white">Shoes</a></p>
                             </div>
                             <!-- Grid column -->
                             <!-- Grid column -->

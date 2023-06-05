@@ -10,6 +10,10 @@ function main() {
     console.log("simple");
 }
 
+function logout() { 
+    alert("You have been logged out!");
+}
+
 // function loginTest(){
 //     $('#logintest').modal('show');
     

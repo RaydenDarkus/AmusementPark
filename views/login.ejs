@@ -30,7 +30,13 @@
       background-repeat: no-repeat;
       font-style: italic;
     }
-    
+
+    .contact100-form-checkbox {
+      padding-left: 5px;
+      padding-top: 5px;
+      padding-bottom: 35px;
+    }
+
   </style>
 </head>
 
@@ -51,14 +57,32 @@
       <h1 class="card-header text-center">Login To Your Account</h1>
       <div class="card-body">
         <form action="/loginpage" method="POST">
+          <% if (successMessage && successMessage.length > 0) { %>
+            <div class="alert alert-success">
+                <strong><%= successMessage %></strong>
+            </div>
+          <% } %>
+          
+          <% if (errorMessage && errorMessage.length > 0) { %>
+              <div class="alert alert-danger">
+                  <strong><%= errorMessage %></strong>
+              </div>
+          <% } %>
+          
           <div class="mb-3">
             <label for="UserName" class="form-label">User Name</label>
             <input type="text" class="form-control" id="UserN" name="UserN" placeholder="User Name" required>
           </div>
           <div class="mb-3">
             <label for="Password" class="form-label">Password</label>
-            <input type="text" class="form-control" name="CPassword" id="CPassword" placeholder="Password" required>
+            <input type="password" class="form-control" name="CPassword" id="CPassword" placeholder="Password" autocomplete="off" required>
           </div>
+          <div class="contact100-form-checkbox">
+						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+						<label class="label-checkbox100" for="ckb1">
+							Remember me
+						</label>
+					</div>
           <div class="mb-3">
             <a href="/signup" style="font-size:small; color:lightblue;"> Newuser? register here</a>
           </div>
