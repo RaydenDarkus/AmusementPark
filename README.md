@@ -1,21 +1,21 @@
 # AmusementPark
 
 
-This is a website for AidenWorld Amusement Park
+This is a website for AidenWorld Amusement Park. These are a list of features:-
 
-### Home
+- Home
 
-### Signup
+- Signup
 
-### Login
+- Login
 
-### Merchandise           
+- Merchandise           
 
-### TicketBooking
+- TicketBooking
 
-### Confirmation
+- Confirmation
 
-### Print
+- Print
 
 
 
