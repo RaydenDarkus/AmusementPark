@@ -56,7 +56,7 @@
       <!-- <div class="card bg-image" style="background-image:url('img/gr1.jpeg');"> -->
       <h1 class="card-header text-center">Login To Your Account</h1>
       <div class="card-body">
-        <form action="/loginpage" method="POST">
+        <form action="/loginpage" onsubmit="validate()" method="POST">
           <% if (successMessage && successMessage.length > 0) { %>
             <div class="alert alert-success">
                 <strong><%= successMessage %></strong>

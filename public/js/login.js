@@ -1,3 +1,8 @@
+function validate() {
+        var usernName = document.getElementById("UserN").value;
+        alert("Hi" + usernName);
+}
+
 // var DB = {};
 // function processLogin() {
 //     userData = DB[$('#UserN').val()];
